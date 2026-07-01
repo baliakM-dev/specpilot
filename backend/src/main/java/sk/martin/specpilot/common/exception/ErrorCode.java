@@ -2,8 +2,8 @@ package sk.martin.specpilot.common.exception;
 
 public enum ErrorCode {
 
-    VALIDATION_ERROR("https://specpilot/errors/validation-error", "Validation failed"),
-    INTERNAL_ERROR("https://specpilot/errors/internal-error", "Internal error");
+    VALIDATION_ERROR("https://specpilot.dev/errors/validation-error", "Validation failed"),
+    INTERNAL_ERROR("https://specpilot.dev/errors/internal-error", "Internal error");
 
     private final String typeUri;
     private final String title;
