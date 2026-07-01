@@ -1,6 +1,6 @@
 # CLAUDE.md — Backend
 
-Java 21 / Spring Boot conventions for this directory. Also read the [root `CLAUDE.md`](../CLAUDE.md).
+Java 25 / Spring Boot 4 conventions for this directory. Also read the [root `CLAUDE.md`](../CLAUDE.md).
 
 ## Package Layout
 

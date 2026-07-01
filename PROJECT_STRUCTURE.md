@@ -46,6 +46,8 @@ specpilot
         resources
           application.yml
           application-local.yml
+          application-dev.yml
+          application-prod.yml
           application-test.yml
           db
             migration
@@ -346,6 +348,8 @@ sk.martin.specpilot
 backend/src/main/resources
   application.yml
   application-local.yml
+  application-dev.yml
+  application-prod.yml
   application-test.yml
   db
     migration

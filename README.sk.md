@@ -62,7 +62,7 @@ SpecPilot demonštruje realistický workflow, kde AI pomáha pri analýze a výv
 
 ## Technologický stack
 
-**Backend:** Java 21, Spring Boot, Spring Security, OAuth2 Client, Spring Data JPA, PostgreSQL, Flyway, MapStruct, ProblemDetail, JUnit 5, Mockito, Testcontainers, springdoc-openapi
+**Backend:** Java 25, Spring Boot 4, Spring Security, OAuth2 Client, Spring Data JPA, PostgreSQL, Flyway, MapStruct, ProblemDetail, JUnit 5, Mockito, Testcontainers, springdoc-openapi
 
 **Frontend:** React, TypeScript, Vite, Material UI, React Router, React Query, React Hook Form, Zod
 

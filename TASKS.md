@@ -3,7 +3,7 @@
 Tento súbor slúži ako hlavný checklist pre vývoj projektu SpecPilot.
 
 Projekt: **AI-assisted requirements and architecture management platform**  
-Stack: **Java 21, Spring Boot, React, TypeScript, PostgreSQL, Flyway, Keycloak, Docker, AI integration**
+Stack: **Java 25, Spring Boot 4, React, TypeScript, PostgreSQL, Flyway, Keycloak, Docker, AI integration**
 
 ---
 
@@ -56,7 +56,7 @@ Vytvoriť základ Spring Boot backendu.
 ## Checklist
 
 - [ ] Vytvoriť Spring Boot projekt v priečinku `backend`
-- [ ] Nastaviť Java 21
+- [ ] Nastaviť Java 25
 - [ ] Nastaviť Maven wrapper
 - [ ] Pridať dependency: Spring Web
 - [ ] Pridať dependency: Spring Validation
@@ -85,8 +85,10 @@ Vytvoriť základ Spring Boot backendu.
   - [ ] `common`
   - [ ] `config`
 - [ ] Nastaviť `application.yml`
-- [ ] Nastaviť `application-local.yml`
-- [ ] Nastaviť `application-test.yml`
+- [ ] Nastaviť `application-local.yml` (feature/* vetvy, lokálny Docker Postgres/Keycloak)
+- [ ] Nastaviť `application-dev.yml` (deploy z `develop`, Neon "dev" DB branch)
+- [ ] Nastaviť `application-prod.yml` (deploy z `main`, Neon "main" DB branch)
+- [ ] Nastaviť `application-test.yml` (profil pre automatizované testy s Testcontainers)
 - [ ] Nastaviť základný health endpoint cez Actuator
 - [ ] Vytvoriť `GlobalExceptionHandler`
 - [ ] Vytvoriť základný `BusinessException`

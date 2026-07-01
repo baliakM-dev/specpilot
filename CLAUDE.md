@@ -4,7 +4,7 @@ Instructions for Claude Code when working in this repository.
 
 ## What This Project Is
 
-SpecPilot is an AI-assisted requirements and architecture management platform: Java 21 / Spring Boot backend, React / TypeScript frontend, Keycloak for auth (BFF pattern), PostgreSQL + Flyway, Docker Compose for local infra.
+SpecPilot is an AI-assisted requirements and architecture management platform: Java 25 / Spring Boot 4 backend, React / TypeScript frontend, Keycloak for auth (BFF pattern), PostgreSQL + Flyway, Docker Compose for local infra.
 
 Full product description: [`README.md`](README.md) / [`README.sk.md`](README.sk.md).
 Full folder layout: [`PROJECT_STRUCTURE.md`](PROJECT_STRUCTURE.md).

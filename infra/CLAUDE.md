@@ -13,6 +13,18 @@ Docker / Keycloak / observability conventions for this directory. Also read the 
 - Never commit real secrets. `.env.example` at the repo root documents every required variable with placeholder values; real values go in a local, gitignored `.env`.
 - Backend gets its config (DB credentials, Keycloak client secret, AI API key) exclusively via environment variables — never hardcoded in `docker-compose.dev.yml` or committed config files.
 
+## Branches & Environments
+
+| Git branch | Spring profile | Database |
+|---|---|---|
+| `feature/*` | `local` | Local Docker Postgres |
+| `develop` | `dev` | Neon "dev" branch (shared staging environment, CI/CD-deployed) |
+| `main` | `prod` | Neon "main" branch (production) |
+
+`application-test.yml` is orthogonal to this table — it's the profile activated by `./mvnw test` (Testcontainers-based automated tests), not a deployment environment, and runs the same way regardless of branch.
+
+Feature work never touches Neon directly: develop locally against Docker Postgres, and let CI/CD promote to the shared Neon "dev" branch only after merging into `develop`.
+
 ## Keycloak
 
 - The realm, clients, roles and test users are configured once via the Keycloak admin UI, then exported to `infra/keycloak/realm-export.json`, which is imported automatically on container startup.
