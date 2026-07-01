@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/specpilot}
+    username: ${SPRING_DATASOURCE_USERNAME:specpilot}
+    password: ${SPRING_DATASOURCE_PASSWORD:specpilot}
+
+management:
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  level:
+    sk.martin.specpilot: DEBUG
