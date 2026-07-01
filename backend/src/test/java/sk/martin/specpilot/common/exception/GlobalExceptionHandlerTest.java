@@ -22,6 +22,7 @@ class GlobalExceptionHandlerTest {
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.CONFLICT);
         ProblemDetail body = response.getBody();
         assertThat(body).isNotNull();
+        assert body.getType() != null;
         assertThat(body.getType().toString()).isEqualTo(ErrorCode.INTERNAL_ERROR.typeUri());
         assertThat(body.getTitle()).isEqualTo(ErrorCode.INTERNAL_ERROR.title());
         assertThat(body.getDetail()).isEqualTo("something went wrong");

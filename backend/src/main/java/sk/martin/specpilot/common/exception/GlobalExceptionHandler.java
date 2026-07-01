@@ -3,6 +3,8 @@ package sk.martin.specpilot.common.exception;
 import java.net.URI;
 import java.util.LinkedHashMap;
 import java.util.Map;
+
+import org.jspecify.annotations.NonNull;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ProblemDetail;
@@ -19,10 +21,10 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     @Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(
-            MethodArgumentNotValidException ex,
-            HttpHeaders headers,
-            HttpStatusCode status,
-            WebRequest request) {
+        MethodArgumentNotValidException ex,
+        @NonNull HttpHeaders headers,
+        @NonNull HttpStatusCode status,
+        @NonNull WebRequest request) {
         ProblemDetail problemDetail = ProblemDetail.forStatusAndDetail(status, "Request validation failed");
         problemDetail.setType(URI.create(ErrorCode.VALIDATION_ERROR.typeUri()));
         problemDetail.setTitle(ErrorCode.VALIDATION_ERROR.title());
