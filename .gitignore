@@ -6,7 +6,7 @@ Thumbs.db
 .idea/
 *.iml
 .vscode/
-
+docs/superpowers
 # Backend (Maven / Java)
 # Note: backend/.mvn/wrapper/maven-wrapper.jar and maven-wrapper.properties
 # must stay tracked so `./mvnw` works on a fresh clone without Maven installed.
