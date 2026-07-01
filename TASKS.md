@@ -55,51 +55,51 @@ Vytvoriť základ Spring Boot backendu.
 
 ## Checklist
 
-- [ ] Vytvoriť Spring Boot projekt v priečinku `backend`
-- [ ] Nastaviť Java 25
-- [ ] Nastaviť Maven wrapper
-- [ ] Pridať dependency: Spring Web
-- [ ] Pridať dependency: Spring Validation
-- [ ] Pridať dependency: Spring Data JPA
-- [ ] Pridať dependency: PostgreSQL Driver
-- [ ] Pridať dependency: Flyway
-- [ ] Pridať dependency: Spring Security
-- [ ] Pridať dependency: OAuth2 Client
-- [ ] Pridať dependency: Actuator
-- [ ] Pridať dependency: MapStruct
-- [ ] Pridať dependency: Lombok (používaný len na JPA entity - `@Getter`/`@Setter`/`@Builder`; DTO sú Java `record`)
-- [ ] Pridať dependency: springdoc-openapi
-- [ ] Pridať dependency: JUnit 5
-- [ ] Pridať dependency: Mockito
-- [ ] Pridať dependency: Testcontainers
-- [ ] Nastaviť základný package `sk.martin.specpilot`
-- [ ] Vytvoriť package štruktúru:
-  - [ ] `auth`
-  - [ ] `user`
-  - [ ] `project`
-  - [ ] `requirement`
-  - [ ] `ai`
-  - [ ] `review`
-  - [ ] `adr`
-  - [ ] `audit`
-  - [ ] `common`
-  - [ ] `config`
-- [ ] Nastaviť `application.yml`
-- [ ] Nastaviť `application-local.yml` (feature/* vetvy, lokálny Docker Postgres/Keycloak)
-- [ ] Nastaviť `application-dev.yml` (deploy z `develop`, Neon "dev" DB branch)
-- [ ] Nastaviť `application-prod.yml` (deploy z `main`, Neon "main" DB branch)
-- [ ] Nastaviť `application-test.yml` (profil pre automatizované testy s Testcontainers)
-- [ ] Rozhodnúť a nastaviť mechanizmus načítania `.env` do lokálneho profilu (napr. `spring.config.import=optional:file:.env[.properties]`, IDE run config env vars, alebo direnv)
-- [ ] Nastaviť základný health endpoint cez Actuator
-- [ ] Vytvoriť `GlobalExceptionHandler`
-- [ ] Vytvoriť základný `BusinessException`
-- [ ] Vytvoriť základný ProblemDetail response
-- [ ] Napísať context-loads test (`SpecpilotApplicationTests`)
-- [ ] Napísať test pre `GlobalExceptionHandler` / formát ProblemDetail response
-- [ ] Napísať test pre health endpoint
-- [ ] Spustiť backend lokálne
-- [ ] Overiť `/actuator/health`
-- [ ] Overiť Swagger UI (`/swagger-ui.html`)
+- [x] Vytvoriť Spring Boot projekt v priečinku `backend`
+- [x] Nastaviť Java 25
+- [x] Nastaviť Maven wrapper
+- [x] Pridať dependency: Spring Web
+- [x] Pridať dependency: Spring Validation
+- [x] Pridať dependency: Spring Data JPA
+- [x] Pridať dependency: PostgreSQL Driver
+- [x] Pridať dependency: Flyway
+- [x] Pridať dependency: Spring Security
+- [x] Pridať dependency: OAuth2 Client
+- [x] Pridať dependency: Actuator
+- [x] Pridať dependency: MapStruct
+- [x] Pridať dependency: Lombok (používaný len na JPA entity - `@Getter`/`@Setter`/`@Builder`; DTO sú Java `record`)
+- [x] Pridať dependency: springdoc-openapi
+- [x] Pridať dependency: JUnit 5
+- [x] Pridať dependency: Mockito
+- [x] Pridať dependency: Testcontainers
+- [x] Nastaviť základný package `sk.martin.specpilot`
+- [x] Vytvoriť package štruktúru:
+  - [x] `auth`
+  - [x] `user`
+  - [x] `project`
+  - [x] `requirement`
+  - [x] `ai`
+  - [x] `review`
+  - [x] `adr`
+  - [x] `audit`
+  - [x] `common`
+  - [x] `config`
+- [x] Nastaviť `application.yml`
+- [x] Nastaviť `application-local.yml` (feature/* vetvy, lokálny Docker Postgres/Keycloak)
+- [x] Nastaviť `application-dev.yml` (deploy z `develop`, Neon "dev" DB branch)
+- [x] Nastaviť `application-prod.yml` (deploy z `main`, Neon "main" DB branch)
+- [x] Nastaviť `application-test.yml` (profil pre automatizované testy s Testcontainers)
+- [x] Rozhodnúť a nastaviť mechanizmus načítania `.env` do lokálneho profilu (napr. `spring.config.import=optional:file:.env[.properties]`, IDE run config env vars, alebo direnv)
+- [x] Nastaviť základný health endpoint cez Actuator
+- [x] Vytvoriť `GlobalExceptionHandler`
+- [x] Vytvoriť základný `BusinessException`
+- [x] Vytvoriť základný ProblemDetail response
+- [x] Napísať context-loads test (`SpecpilotApplicationTests`)
+- [x] Napísať test pre `GlobalExceptionHandler` / formát ProblemDetail response
+- [x] Napísať test pre health endpoint
+- [x] Spustiť backend lokálne
+- [x] Overiť `/actuator/health`
+- [ ] Overiť Swagger UI (`/swagger-ui.html`) - **NOT verified**: manual check on 2026-07-01 returned `401 Unauthorized` (Basic auth challenge) for both `/v3/api-docs` and `/swagger-ui.html`, because `spring-boot-starter-security` + `spring-boot-starter-security-oauth2-client` are on the classpath with no `SecurityConfig` bean and no OAuth2 client registration configured, so Spring Security's default filter chain requires authentication for every path except the specially-permitted `/actuator/health`. No working credentials exist (no "Using generated security password" line was logged, and `user`/blank also failed). This needs a `SecurityConfig` (permit Swagger/OpenAPI paths, or full OAuth2 login setup) before Swagger UI is actually usable - tracked as follow-up, likely in the `auth` module phase.
 
 ## Výstup
 
