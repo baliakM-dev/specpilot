@@ -25,6 +25,7 @@ See [`PROJECT_STRUCTURE.md`](../PROJECT_STRUCTURE.md) for the full backend packa
 - **Service** — all business logic and rules (status transitions, authorization checks beyond role-level, validation of business invariants). Transactions (`@Transactional`) are declared here, not in controllers or repositories.
 - **Repository** — Spring Data JPA interfaces only, no business logic.
 - **Entities are never returned from a controller.** Every API response is a DTO, mapped via MapStruct (`*Mapper`).
+- **DTOs are Java `record`s**, not classes — immutable, no Lombok needed. **JPA entities use Lombok** (`@Getter`/`@Setter`/`@Builder` as needed) since records don't fit JPA's mutable no-arg-constructor model.
 
 ## Validation & Errors
 

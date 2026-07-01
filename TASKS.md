@@ -67,7 +67,7 @@ Vytvoriť základ Spring Boot backendu.
 - [ ] Pridať dependency: OAuth2 Client
 - [ ] Pridať dependency: Actuator
 - [ ] Pridať dependency: MapStruct
-- [ ] Pridať dependency: Lombok, ak ho chceš používať
+- [ ] Pridať dependency: Lombok (používaný len na JPA entity - `@Getter`/`@Setter`/`@Builder`; DTO sú Java `record`)
 - [ ] Pridať dependency: springdoc-openapi
 - [ ] Pridať dependency: JUnit 5
 - [ ] Pridať dependency: Mockito
@@ -89,12 +89,17 @@ Vytvoriť základ Spring Boot backendu.
 - [ ] Nastaviť `application-dev.yml` (deploy z `develop`, Neon "dev" DB branch)
 - [ ] Nastaviť `application-prod.yml` (deploy z `main`, Neon "main" DB branch)
 - [ ] Nastaviť `application-test.yml` (profil pre automatizované testy s Testcontainers)
+- [ ] Rozhodnúť a nastaviť mechanizmus načítania `.env` do lokálneho profilu (napr. `spring.config.import=optional:file:.env[.properties]`, IDE run config env vars, alebo direnv)
 - [ ] Nastaviť základný health endpoint cez Actuator
 - [ ] Vytvoriť `GlobalExceptionHandler`
 - [ ] Vytvoriť základný `BusinessException`
 - [ ] Vytvoriť základný ProblemDetail response
+- [ ] Napísať context-loads test (`SpecpilotApplicationTests`)
+- [ ] Napísať test pre `GlobalExceptionHandler` / formát ProblemDetail response
+- [ ] Napísať test pre health endpoint
 - [ ] Spustiť backend lokálne
 - [ ] Overiť `/actuator/health`
+- [ ] Overiť Swagger UI (`/swagger-ui.html`)
 
 ## Výstup
 
